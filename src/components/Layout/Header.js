@@ -1,5 +1,7 @@
 import { Fragment } from "react";
+import { useState } from "react";
 import mealsImage from "../../assets/meals.jpg";
+import Cart from "../Cart/Cart";
 import classes from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
 const Header = (props) => {
@@ -7,8 +9,9 @@ const Header = (props) => {
     <Fragment>
       <header className={classes.header}>
         <h1>Reactmeals</h1>
-        <HeaderCartButton />
+        <HeaderCartButton onClick={props.onShowCart} />
       </header>
+
       <div className={classes["main-image"]}>
         <img src={mealsImage} alt="table full of delicious food" />
       </div>
